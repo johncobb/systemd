@@ -1,0 +1,20 @@
+[Unit]
+
+Description=Led Service Test
+
+After=network.target
+
+[Service]
+
+Type=simple
+#Type=forking
+#PIDFile=/var/run/ledtest.pid
+
+WorkingDirectory=/home/root/systemd/
+ExecStart=/usr/bin/python ledtest.py
+KillMode=process
+#RemainAfterExit=true
+
+[Install]
+
+WantedBy=multi-user.target
