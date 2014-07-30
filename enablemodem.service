@@ -1,31 +1,3 @@
-[Unit]
-
-Description=Enable Modem Service
-
-After=network.target
-
-[Service]
-
-Type=simple
-#Type=forking
-#PIDFile=/var/run/ledtest.pid
-
-WorkingDirectory=/home/root/modemscripts/
-ExecStart=/usr/bin/python enablemodem.py
-KillMode=process
-#RemainAfterExit=true
-
-[Install]
-
-WantedBy=multi-user.target
-
-
-
-
-
-
-************ UPDATED ************ 
-#New Version
 
 [Unit]
 
