@@ -11,7 +11,8 @@ Type=simple
 #PIDFile=/var/run/ledtest.pid
 
 WorkingDirectory=/home/root/ModemScripts/
-ExecStart=/usr/bin/python enablemodem.py
+ExecStart=/usr/bin/python enablemodem.py -p kore
+#ExecStart=/usr/bin/python enablemodem.py -p verizon
 KillMode=process
 #RemainAfterExit=true
 
