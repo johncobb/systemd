@@ -8,9 +8,9 @@ Description=Enable Modem Service
 
 Type=simple
 #Type=forking
-#PIDFile=/var/run/ledtest.pid
+#PIDFile=/var/run/modemscripts.pid
 
-WorkingDirectory=/home/root/ModemScripts/
+WorkingDirectory=/home/root/modemscripts/
 ExecStart=/usr/bin/python enablemodem.py -p kore
 ExecStop=/usr/bin/poff
 KillMode=process
