@@ -9,7 +9,7 @@ Type=simple
 #Type=forking
 #PIDFile=/var/run/echobase.pid
 
-WorkingDirectory=/home/root/EchoBasePPP/
+WorkingDirectory=/home/root/echobaseppp/
 ExecStart=/usr/bin/python main.py -m service
 KillMode=process
 #RemainAfterExit=true

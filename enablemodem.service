@@ -12,7 +12,7 @@ Type=simple
 
 WorkingDirectory=/home/root/ModemScripts/
 ExecStart=/usr/bin/python enablemodem.py -p kore
-#ExecStart=/usr/bin/python enablemodem.py -p verizon
+ExecStop=/usr/bin/poff
 KillMode=process
 #RemainAfterExit=true
 
