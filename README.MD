@@ -9,7 +9,9 @@ systemctl disable service-name
 systemctl start service-name
 systemctl restart service-name
 systemctl status service-name
+systemctl daemon-reload
 cp service-name.service /etc/systemd/system/service-name.service
+et al: https://wiki.archlinux.org/index.php/systemd
 ```
 
 <b>Service Descriptor Structure</b>
