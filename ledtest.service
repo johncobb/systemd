@@ -10,8 +10,8 @@ Type=simple
 #Type=forking
 #PIDFile=/var/run/ledtest.pid
 
-WorkingDirectory=/home/root/systemd/
-ExecStart=/usr/bin/python ledtest.py
+WorkingDirectory=/home/pi/apps/systemd/
+ExecStart=/usr/bin/python /home/pi/apps/systemd/ledtest.py
 KillMode=process
 #RemainAfterExit=true
 

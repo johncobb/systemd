@@ -2,16 +2,16 @@ import threading
 import time
 import Queue
 import subprocess
-import Adafruit_BBIO.UART as UART
-import Adafruit_BBIO.GPIO as GPIO
+import wiringpi as GPIO
+
 
 class CpGpioMap():
-    GPIO_CELLENABLE = "P9_12"
-    GPIO_CELLRESET = "P9_23"
-    GPIO_CELLONOFF = "P8_12"
-    GPIO_CELLPWRMON = "P9_42"
-    GPIO_LED1 = "P8_14"
-    GPIO_LED2 = "P8_15"
+    GPIO_CELLENABLE = 17
+    GPIO_CELLRESET = 6
+    GPIO_CELLONOFF = 5
+    GPIO_CELLPWRMON = 26
+    GPIO_LED1 = 23
+    GPIO_LED2 = 24
     
 
             
@@ -23,8 +23,8 @@ def led_init():
 
     print 'Initializing Led(s)'
 
-    GPIO.setup(CpGpioMap.GPIO_LED1, GPIO.OUT) #LED1
-    GPIO.setup(CpGpioMap.GPIO_LED2, GPIO.OUT) #LED2
+    GPIO.pinMode(CpGpioMap.GPIO_LED1, GPIO.OUTPUT) #LED1
+    GPIO.pinMode(CpGpioMap.GPIO_LED2, GPIO.OUTPUT) #LED2
 
     print 'Led(s) Initialized' 
 
@@ -32,14 +32,16 @@ def led_init():
 if __name__ == '__main__':
     
     
+    GPIO.wiringPiSetupGpio()
+
     led_init()
     
     while True:
-        GPIO.output(CpGpioMap.GPIO_LED1, GPIO.HIGH)
-        GPIO.output(CpGpioMap.GPIO_LED2, GPIO.LOW)
+        GPIO.digitalWrite(CpGpioMap.GPIO_LED1, GPIO.GPIO.HIGH)
+        GPIO.digitalWrite(CpGpioMap.GPIO_LED2, GPIO.GPIO.LOW)
         time.sleep(.25)
-        GPIO.output(CpGpioMap.GPIO_LED1, GPIO.LOW)
-        GPIO.output(CpGpioMap.GPIO_LED2, GPIO.HIGH)
+        GPIO.digitalWrite(CpGpioMap.GPIO_LED1, GPIO.GPIO.LOW)
+        GPIO.digitalWrite(CpGpioMap.GPIO_LED2, GPIO.GPIO.HIGH)
         time.sleep(.25)
         
 
