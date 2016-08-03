@@ -9,6 +9,7 @@ systemctl disable service-name
 systemctl start service-name
 systemctl restart service-name
 systemctl status service-name
+cp service-name.service /etc/systemd/system/service-name.service
 ```
 
 <b>Service Descriptor Structure</b>
